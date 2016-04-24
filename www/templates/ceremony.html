@@ -1,0 +1,69 @@
+﻿<ion-view view-title="Checklist Religioso e civil">
+    <ion-content>
+        <h1>Religioso e civil</h1>
+
+        <div>
+            <form ng-submit="ceremonySubmit()">
+
+                <!--checklist de data do religioso-->
+                <ion-checkbox ng-init='checkStatus=false'
+                              ng-model="religiousDateCheck">Data Religioso?</ion-checkbox>
+                <input ng-disabled="!religiousDateCheck" ng-model="religiousDate" type="date"> {{religious.religiousDate}}</input>
+
+                <!--checklist de data do civil-->
+                <ion-checkbox ng-init='checkStatus=false'
+                              ng-model="civilDateCheck">Data civil?</ion-checkbox>
+                <input ng-disabled="!civilDateCheck" ng-model="civilDate" type="date"> {{religious.civilDate}}</input>
+
+                <!--checklist alianças-->
+                <ion-checkbox ng-init='checkStatus=false'
+                              ng-model="weddingCheck">Alian&ccedil;as</ion-checkbox>
+                <input ng-disabled="!weddingCheck" ng-model="wedding" type="text"> {{religious.wedding}}</input>
+
+                <!--checklist cartório-->
+                <ion-checkbox ng-init='checkStatus=false'
+                              ng-model="registryCheck">Cart&oacute;rio</ion-checkbox>
+                <input ng-disabled="!registryCheck" ng-model="registry" type="text"> {{religious.registry}}</input>
+
+                <!--checklist daminhas-->
+                <ion-checkbox ng-init='checkStatus=false'
+                              ng-model="flowerGirlsCheck">Daminhas</ion-checkbox>
+                <input ng-disabled="!flowerGirlsCheck" ng-model="flowerGirl" type="text"> {{religious.flowerGirl}}</input>
+
+                <!--checklist documentação-->
+                <ion-checkbox ng-init='checkStatus=false'
+                              ng-model="documentationCheck">Documentação</ion-checkbox>
+                <input ng-disabled="!documentationCheck" ng-model="documentation" type="text"> {{religious.documentation}}</input>
+
+                <!--checklist padre/igreja-->
+                <ion-checkbox ng-init='checkStatus=false'
+                              ng-model="fatherChurchCheck">Igreja/Padre</ion-checkbox>
+                <input ng-disabled="!fatherChurchCheck" ng-model="fatherAndChurch" type="text"> {{religious.fatherAndChurch}}</input>
+
+                <!--checklist Padrinhos-->
+                <ion-checkbox ng-init='checkStatus=false'
+                              ng-model="godParentsCheck">Padrinhos</ion-checkbox>
+                <input ng-disabled="!godParentsCheck" ng-model="godParents" type="text"> {{religious.godParents}}</input>
+
+                <!--checklist roupa da noiva-->
+                <ion-checkbox ng-init='checkStatus=false'
+                              ng-model="brideClothesCheck">Roupa da noiva</ion-checkbox>
+                <input ng-disabled="!brideClothesCheck" ng-model="brideClothes" type="text"> {{religious.brideClothes}}</input>
+
+                <!--checklist roupa do noivo-->
+                <ion-checkbox ng-init='checkStatus=false'
+                              ng-model="groomClothesCheck">Roupa do noivo</ion-checkbox>
+                <input ng-disabled="!groomClothesCheck" ng-model="groomClothes" type="text"> {{religious.groomClothes}}</input>
+
+                <!--checklist roupa da Testemunhas-->
+                <ion-checkbox ng-init='checkStatus=false'
+                              ng-model="witnessesCheck">Testemunhas</ion-checkbox>
+                <input ng-disabled="!witnessesCheck" ng-model="witnesses" type="text"> {{religious.witnesses}}</input>
+                <br />
+                <label class="item">
+                    <button class="button button-block button-positive" type="submit">Salvar</button>
+                </label>
+            </form>
+        </div>
+    </ion-content>
+</ion-view>
