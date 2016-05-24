@@ -1,4 +1,10 @@
 {
-  "name": "ionic-sidemenu",
-  "app_id": ""
+  "app_id": "",
+  "name": "O dia esperado",
+  "proxies": [
+    {
+      "path": "/api",
+      "proxyUrl": "http://cors.api.com/api"
+    }
+  ]
 }

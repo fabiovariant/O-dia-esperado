@@ -7,58 +7,62 @@
 
                 <!--checklist de data do religioso-->
                 <ion-checkbox ng-init='checkStatus=false'
-                              ng-model="religiousDateCheck">Data Religioso?</ion-checkbox>
-                <input ng-disabled="!religiousDateCheck" ng-model="religiousDate" type="date"> {{religious.religiousDate}}</input>
+                              ng-model="religiousDateCheck">Data Religioso</ion-checkbox>
+                <input id="religiousDate" name="religiousDateInput" 
+                       ng-disabled="!religiousDateCheck" ng-model="ceremonyData.religiousDate" 
+                       type="date" />
 
                 <!--checklist de data do civil-->
                 <ion-checkbox ng-init='checkStatus=false'
-                              ng-model="civilDateCheck">Data civil?</ion-checkbox>
-                <input ng-disabled="!civilDateCheck" ng-model="civilDate" type="date"> {{religious.civilDate}}</input>
+                              ng-model="civilDateCheck">Data civil</ion-checkbox>
+                <input id="civilDate" name="civilDateInput" 
+                       ng-disabled="!civilDateCheck" ng-model="ceremonyData.civilDate" 
+                       type="date" />
 
                 <!--checklist alianças-->
                 <ion-checkbox ng-init='checkStatus=false'
                               ng-model="weddingCheck">Alian&ccedil;as</ion-checkbox>
-                <input ng-disabled="!weddingCheck" ng-model="wedding" type="text"> {{religious.wedding}}</input>
+                <input id="alliance" name="allianceInput" ng-disabled="!weddingCheck" ng-model="ceremonyData.alliance" type="text" />
 
                 <!--checklist cartório-->
                 <ion-checkbox ng-init='checkStatus=false'
                               ng-model="registryCheck">Cart&oacute;rio</ion-checkbox>
-                <input ng-disabled="!registryCheck" ng-model="registry" type="text"> {{religious.registry}}</input>
+                <input id="registry" name="registryInput" ng-disabled="!registryCheck" ng-model="ceremonyData.registry" type="text" />
 
                 <!--checklist daminhas-->
                 <ion-checkbox ng-init='checkStatus=false'
                               ng-model="flowerGirlsCheck">Daminhas</ion-checkbox>
-                <input ng-disabled="!flowerGirlsCheck" ng-model="flowerGirl" type="text"> {{religious.flowerGirl}}</input>
+                <input id="flowerGirl" name="flowerGirlInput" ng-disabled="!flowerGirlsCheck" ng-model="ceremonyData.flowerGirl" type="text" />
 
                 <!--checklist documentação-->
                 <ion-checkbox ng-init='checkStatus=false'
                               ng-model="documentationCheck">Documentação</ion-checkbox>
-                <input ng-disabled="!documentationCheck" ng-model="documentation" type="text"> {{religious.documentation}}</input>
+                <input id="documentation" name="documentationInput" ng-disabled="!documentationCheck" ng-model="ceremonyData.documentation" type="text" />
 
                 <!--checklist padre/igreja-->
                 <ion-checkbox ng-init='checkStatus=false'
                               ng-model="fatherChurchCheck">Igreja/Padre</ion-checkbox>
-                <input ng-disabled="!fatherChurchCheck" ng-model="fatherAndChurch" type="text"> {{religious.fatherAndChurch}}</input>
+                <input id="fatherAndChurch" name="fatherAndChurchInput" ng-disabled="!fatherChurchCheck" ng-model="ceremonyData.fatherAndChurch" type="text" />
 
                 <!--checklist Padrinhos-->
                 <ion-checkbox ng-init='checkStatus=false'
                               ng-model="godParentsCheck">Padrinhos</ion-checkbox>
-                <input ng-disabled="!godParentsCheck" ng-model="godParents" type="text"> {{religious.godParents}}</input>
+                <input id="godParents" name="godParentsInput" ng-disabled="!godParentsCheck" ng-model="ceremonyData.godParents" type="text" />
 
                 <!--checklist roupa da noiva-->
                 <ion-checkbox ng-init='checkStatus=false'
                               ng-model="brideClothesCheck">Roupa da noiva</ion-checkbox>
-                <input ng-disabled="!brideClothesCheck" ng-model="brideClothes" type="text"> {{religious.brideClothes}}</input>
+                <input id="brideClothes" name="brideClothesInput" ng-disabled="!brideClothesCheck" ng-model="ceremonyData.brideClothes" type="text" />
 
                 <!--checklist roupa do noivo-->
                 <ion-checkbox ng-init='checkStatus=false'
                               ng-model="groomClothesCheck">Roupa do noivo</ion-checkbox>
-                <input ng-disabled="!groomClothesCheck" ng-model="groomClothes" type="text"> {{religious.groomClothes}}</input>
+                <input id="groomClothes" name="groomClothesInput" ng-disabled="!groomClothesCheck" ng-model="ceremonyData.groomClothes" type="text" />
 
                 <!--checklist roupa da Testemunhas-->
                 <ion-checkbox ng-init='checkStatus=false'
                               ng-model="witnessesCheck">Testemunhas</ion-checkbox>
-                <input ng-disabled="!witnessesCheck" ng-model="witnesses" type="text"> {{religious.witnesses}}</input>
+                <input id="witnesses" name="witnessesInput" ng-disabled="!witnessesCheck" ng-model="ceremonyData.witnesses" type="text" />
                 <br />
                 <label class="item">
                     <button class="button button-block button-positive" type="submit">Salvar</button>

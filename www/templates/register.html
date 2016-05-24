@@ -1,0 +1,37 @@
+<ion-view view-title="Browse">
+  <ion-content>
+    <h1>Cadastro</h1>
+    <div>
+        <form ng-submit="registerSubmit()">
+
+            <!--Nome do noivo-->
+            <label class="item item-input">
+                <span class="input-label">Nome do noivo</span>
+                <input ng-model="groomsName" type="text" /> 
+            </label>
+
+            <!--Nome da noiva-->
+            <label class="item item-input">
+                <span class="input-label">Nome da noiva</span>
+                <input ng-model="bridgeName" type="text" /> 
+            </label>
+            
+            <!--Email de cadastro-->
+            <label class="item item-input">
+                <span class="input-label">E-mail</span>
+                <input ng-model="groomsEmail" type="text" /> 
+            </label>
+
+            <!--Senha-->
+            <label class="item item-input">
+                <span class="input-label">Senha</span>
+                <input ng-model="password" type="password" /> 
+            </label>
+
+            <label class="item">
+                <button class="button button-block button-positive" type="submit">Cadastrar</button>
+            </label>
+        </form>
+    </div>
+  </ion-content>
+</ion-view>
