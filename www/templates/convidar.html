@@ -1,0 +1,20 @@
+﻿<ion-view view-title="Convidados">
+    <ion-content>
+        <h1>Convidados</h1>
+        <div>
+            <form id="form" name="form" ng-submit="inviteGuest(guest)">
+                <label class="item item-input">
+                    <input ng-model='guest.name' type='text' placeholder="Nome convidado" style="width: 100%" />
+                </label>
+                <br />
+                <label class="item item-input">
+                    <input ng-model='guest.email' type='text' placeholder="E-mail do convidado" style="width: 100%" />
+                </label>
+                <br />
+                <label class="item">
+                    <button class="button button-block button-positive" type="submit">Convidar</button>
+                </label>
+            </form>
+        </div>
+    </ion-content>
+</ion-view>

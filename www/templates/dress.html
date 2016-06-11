@@ -1,0 +1,25 @@
+﻿<ion-view view-title="Checklist Vestido">
+    <ion-content>
+        <h1>Vestido</h1>
+
+        <form id="form" name="form" ng-submit="dressSubmit()">
+            <ion-checkbox ng-init='checkStatus=false' ng-model="dressCheckCheck">dressCheck</ion-checkbox>
+            <input id="dressCheck" name="dressCheckInput" ng-disabled="!dressCheckCheck" ng-model="dressData.dressCheck" type="text" />
+
+            <ion-checkbox ng-init='checkStatus=false' ng-model="dressData.isPerfectCheck">Está perfeito!</ion-checkbox>
+            <br/>
+
+            <ion-checkbox ng-init='checkStatus=false' ng-model="takeDateCheck">takeDate</ion-checkbox>
+            <input id="takeDate" name="takeDateInput" ng-disabled="!takeDate" ngCheck-model="partyData.dressData.takeDate" type="date" />
+
+            <ion-checkbox ng-init='checkStatus=false' ng-model="devolutionDateCheck">devolutionDate</ion-checkbox>
+            <input id="devolutionDate" name="devolutionDateInput" ng-disabled="!devolutionDateCheck" ng-model="dressData.devolutionDate" type="date" />
+
+            <br />
+            <label class="item">
+                <button class="button button-block button-positive" type="submit">Salvar</button>
+            </label>
+        </form>
+
+    </ion-content>
+</ion-view>

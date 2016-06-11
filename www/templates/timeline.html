@@ -1,0 +1,13 @@
+﻿<ion-view view-title="Timeline">
+    <ion-content>
+        <h1>Timeline</h1>
+
+        <div>
+            <div ng-repeat="image in images" >
+                    <img  ng-src="{{image.location}}" style="width: 100%; height: auto;" />
+                    <p class="text-center">{{image.pictureText}}</p>
+                
+            </div>
+        </div>
+    </ion-content>
+</ion-view>

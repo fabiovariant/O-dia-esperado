@@ -1,0 +1,31 @@
+﻿<ion-view view-title="Checklist Festa">
+    <ion-content>
+        <h1>Festa</h1>
+        <form id="form" name="form" ng-submit="partySubmit()">
+            <ion-checkbox ng-init='checkStatus=false' ng-model="drinksCheck">drinks</ion-checkbox>
+            <input id="drinks" name="drinksInput" ng-disabled="!drinksCheck" ng-model="partyData.drinks" type="text" />
+            <ion-checkbox ng-init='checkStatus=false' ng-model="cakeCandyCheck">cakeCandy</ion-checkbox>
+            <input id="cakeCandy" name="cakeCandyInput" ng-disabled="!cakeCandyCheck" ng-model="partyData.cakeCandy" type="text" />
+            <ion-checkbox ng-init='checkStatus=false' ng-model="buffetCheck">buffet</ion-checkbox>
+            <input id="buffet" name="buffetInput" ng-disabled="!buffetCheck" ng-model="partyData.buffet" type="text" />
+            <ion-checkbox ng-init='checkStatus=false' ng-model="carCheck">car</ion-checkbox>
+            <input id="car" name="carInput" ng-disabled="!carCheck" ng-model="partyData.car" type="text" />
+            <ion-checkbox ng-init='checkStatus=false' ng-model="decorationCheck">decoration</ion-checkbox>
+            <input id="decoration" name="decorationInput" ng-disabled="!decorationCheck" ng-model="partyData.decoration" type="text" />
+            <ion-checkbox ng-init='checkStatus=false' ng-model="photoAndVideoCheck">photoAndVideo</ion-checkbox>
+            <input id="photoAndVideo" name="photoAndVideoInput" ng-disabled="!photoAndVideoCheck" ng-model="partyData.photoAndVideo" type="text" />
+            <ion-checkbox ng-init='checkStatus=false' ng-model="localeCheck">locale</ion-checkbox>
+            <input id="locale" name="localeInput" ng-disabled="!localeCheck" ng-model="partyData.locale" type="text" />
+            <ion-checkbox ng-init='checkStatus=false' ng-model="safetyCheck">safety</ion-checkbox>
+            <input id="safety" name="safetyInput" ng-disabled="!safetyCheck" ng-model="partyData.safety" type="text" />
+            <ion-checkbox ng-init='checkStatus=false' ng-model="soundCheck">sound</ion-checkbox>
+            <input id="sound" name="soundInput" ng-disabled="!soundCheck" ng-model="partyData.sound" type="text" />
+            <ion-checkbox ng-init='checkStatus=false' ng-model="valetCheck">valet</ion-checkbox>
+            <input id="valet" name="valetInput" ng-disabled="!valetCheck" ng-model="partyData.valet" type="text" />
+            <br />
+            <label class="item">
+                <button class="button button-block button-positive" type="submit">Salvar</button>
+            </label>
+        </form>
+    </ion-content>
+</ion-view>

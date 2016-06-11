@@ -1,13 +1,22 @@
 ﻿angular.module('starter.services', [])
 
-    .factory('CeremonyApi', function ($http, ApiEndpoint) {
-        console.log('ApiEndpoint', ApiEndpoint);
+.factory('ApiGetData', function ($http, $rootScope, ApiEndpoint) {
+    console.log('ApiEndpoint', ApiEndpoint);
 
-        var getApiData = function () {
-            return $http.get(ApiEndpoint.url + '/ceremony/9');
-        };
+    var getApiData = function (local) {
+        return $http.get(ApiEndpoint.url + '/' + local + '/' + $rootScope.idGrooms);
+    };
 
-        return {
-            getApiData: getApiData
-        };
-    })
+    return {
+        getApiData: getApiData
+    };
+})
+
+.factory('GetUU', function ($rootScope, ApiEndpoint) {
+    var uploadurl = ApiEndpoint.url + "/timeline/" + $rootScope.idGrooms;
+    return {
+        query: function () {
+            return uploadurl;
+        }
+    }
+})

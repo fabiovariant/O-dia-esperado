@@ -1,0 +1,12 @@
+﻿<ion-view view-title="Convidados">
+    <ion-content>
+        <h1>Convidados</h1>
+        <div ng-controller="InvitListCtrl">
+            <ul>
+                <li ng-repeat="guest in guests" ng-bind-html-unsafe="guest.invitedName">
+                    {{guest.invitedName}}
+                </li>
+            </ul>
+        </div>
+    </ion-content>
+</ion-view>

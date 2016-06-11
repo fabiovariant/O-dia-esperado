@@ -1,0 +1,27 @@
+﻿<ion-view view-title="Checklist Convites e Papelaria">
+    <ion-content>
+        <h1>Convites e Papelaria</h1>
+        <div>
+            <form id="form" name="form" ng-submit="invitationSubmit()">
+
+                <ion-checkbox ng-init='checkStatus=false' ng-model="invitationCheck">invitation</ion-checkbox>
+                <input id="invitation" name="invitationInput" ng-disabled="!invitationCheck" ng-model="invitation.invitation" type="text" />
+                <ion-checkbox ng-init='checkStatus=false' ng-model="menuCheck">menu</ion-checkbox>
+                <input id="menu" name="menuInput" ng-disabled="!menuCheck" ng-model="invitation.menu" type="text" />
+                <ion-checkbox ng-init='checkStatus=false' ng-model="decotarionDetailsCheck">decotarionDetails</ion-checkbox>
+                <input id="decotarionDetails" name="decotarionDetailsInput" ng-disabled="!decotarionDetailsCheck" ng-model="invitation.decotarionDetails" type="text" />
+                <ion-checkbox ng-init='checkStatus=false' ng-model="souvenirsCheck">souvenirs</ion-checkbox>
+                <input id="souvenirs" name="souvenirsInput" ng-disabled="!souvenirsCheck" ng-model="invitation.souvenirs" type="text" />
+                <ion-checkbox ng-init='checkStatus=false' ng-model="godParentsGiftCheck">godParentsGift</ion-checkbox>
+                <input id="godParentsGift" name="godParentsGiftInput" ng-disabled="!godParentsGiftCheck" ng-model="invitation.godParentsGift" type="text" />
+                <ion-checkbox ng-init='checkStatus=false' ng-model="reservationCheck">reservation</ion-checkbox>
+                <input id="reservation" name="reservationInput" ng-disabled="!reservationCheck" ng-model="invitation.reservation" type="text" />
+
+                <br />
+                <label class="item">
+                    <button class="button button-block button-positive" type="submit">Salvar</button>
+                </label>
+            </form>
+        </div>
+    </ion-content>
+</ion-view>
