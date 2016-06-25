@@ -2,9 +2,17 @@
     <ion-content>
         <h1>Convidados</h1>
         <div ng-controller="InvitListCtrl">
+            <h2>Confirmados!</h2>
             <ul>
-                <li ng-repeat="guest in guests" ng-bind-html-unsafe="guest.invitedName">
-                    {{guest.invitedName}}
+                <li ng-repeat="confirmed in confirmedGuest" ng-bind-html-unsafe="confirmed.invitedName" style="font-size:x-large">
+                    {{confirmed.invitedName}}
+                </li>
+            </ul>
+            <br/>
+            <h2 style="font-size:x-large">Aguardando confirmação!</h2>
+            <ul>
+                <li ng-repeat="notConfirmed in notConfirmedGuest" ng-bind-html-unsafe="notConfirmed.invitedName" style="font-size:x-large">
+                    {{notConfirmed.invitedName}}
                 </li>
             </ul>
         </div>

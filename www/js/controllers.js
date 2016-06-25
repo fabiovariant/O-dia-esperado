@@ -165,28 +165,33 @@ angular.module('starter.controllers', [])
 
     ApiGetData.getApiData('dress').then(function (result) {
         $scope.dressData = result.data;
-        if ($scope.dressData.takeDate != null)
+        if ($scope.dressData.takeDate != null) 
             $scope.dressData.takeDate = new Date($scope.dressData.takeDate);
+        
         if ($scope.dressData.devolutionDate != null)
             $scope.dressData.devolutionDate = new Date($scope.dressData.devolutionDate);
 
         if ($scope.dressData.dressCheck != null)
             $scope.dressCheckCheck = true;
-        if ($scope.dressData.isPerfect != null)
-            $scope.dressData.isPerfectCheck = true;
+
+        if ($scope.dressData.perfectDate != false)
+            $scope.isPerfectCheck = true;
+
         if ($scope.dressData.takeDate != null)
             $scope.takeDateCheck = true;
+
         if ($scope.dressData.devolutionDate != null)
             $scope.devolutionDateCheck = true;
+
     });
 
     $scope.dressSubmit = function () {
         var data = JSON.stringify({
             idGrooms: $rootScope.idGrooms,
             dressCheck: $scope.dressData.dressCheck,
-            isPerfect: $scope.dressData.isPerfectCheck,
+            perfectDate: $scope.dressCheck.perfectDate,
             takeDate: angular.copy($scope.dressData.takeDate),
-            devolutionDate: angular.copy($scope.dressData.devolutionDate),
+            devolutionDate: angular.copy($scope.dressData.devolutionDate)
         });
         $http.put(ApiEndpoint.url + '/dress', data).success(function (data, status) {
             var alertPopup = $ionicPopup.alert({
@@ -222,6 +227,10 @@ angular.module('starter.controllers', [])
             $scope.partyData.soundCheck = true;
         if ($scope.partyData.valet != null)
             $scope.partyData.valetCheck = true;
+        if ($scope.partyData.partyDate != null) {
+            $scope.partyData.partyDate = new Date($scope.partyData.partyDate);
+            $scope.partyData.perfectDateCheck = true;
+        }
     });
 
     $scope.partySubmit = function () {
@@ -236,7 +245,8 @@ angular.module('starter.controllers', [])
             locale: $scope.partyData.locale,
             safety: $scope.partyData.safety,
             sound: $scope.partyData.sound,
-            valet: $scope.partyData.valet
+            valet: $scope.partyData.valet,
+            partyDate: angular.copy($scope.partyData.partyDate)
         });
         $http.put(ApiEndpoint.url + '/party', data).success(function (data, status) {
             var alertPopup = $ionicPopup.alert({
@@ -249,16 +259,33 @@ angular.module('starter.controllers', [])
 
 .controller('TimeLineCtrl', function ($scope, $http, ApiGetData) {
     $scope.images = {};
+    $scope.civilDate;
+    $scope.religiousDate;
+    $scope.perfectDressDate;
 
     ApiGetData.getApiData('timeline').then(function (result) {
-        $scope.images = result.data;
+        $scope.civilDate = new Date(result.data.civilDate);
+        $scope.religiousDate = result.data.religiousDate;
+        $scope.perfectDressDate = result.data.perfectDressDate;
+        
+        $scope.images = result.data.photosModel;
     });
 })
 
 .controller('InvitListCtrl', function ($scope, ApiEndpoint, ApiGetData) {
-    $scope.guests = {};
+    $scope.guests = [{}];
+    $scope.confirmedGuest = [{}];
+    $scope.notConfirmedGuest = [{}];
     ApiGetData.getApiData('guest').then(function (result) {
         $scope.guests = result.data;
+        
+        for (var i = 0; i < $scope.guests.length; i++) {
+            if ($scope.guests[i].isConfirmed == true) {
+                $scope.confirmedGuest.push($scope.guests[i]);
+            } else {
+                $scope.notConfirmedGuest.push($scope.guests[i]);
+            }   
+        }
     });
 })
 
@@ -267,15 +294,51 @@ angular.module('starter.controllers', [])
         var data = JSON.stringify({
             idGrooms: $rootScope.idGrooms,
             invitedName: angular.copy(guest.name),
-            emailInvited: angular.copy( guest.email)
+            emailInvited: angular.copy(guest.email),
+            emailText: angular.copy(guest.email_text)
         });
         $http.post(ApiEndpoint.url + '/guest', data).success(function (data, status) {
             var alertPopup = $ionicPopup.alert({
                 title: 'Sucesso',
-                template: 'E-mail enviado ao convidado.'
+                template: 'E-mail enviado ao convidado. Peça para que o convidado confirme presença no e-mail que foi enviado!'
             });
+        }).error(function (data, status) {
+            var alertPopup = $ionicPopup.alert({
+                title: 'Erro',
+                template: 'Não conseguimos enviar o e-mail :( Verifique sua conexão com a internet.'
+            })
         });
     };
+})
+
+.controller('UserCheckListCtrl', function ($scope, $http, $rootScope, $ionicPopup, ApiEndpoint) {
+    $scope.table = { fields: [] };
+
+    $scope.addFormField = function () {
+        var fields = new Object();
+        fields.idGrooms = $rootScope.idGrooms;
+        fields.annotation = '';
+        $scope.table.fields.push(fields);
+    };
+
+    $scope.submitTable = function () {
+        console.log($scope.table);
+        var data = JSON.stringify({
+            NotepadModel: $scope.table.fields
+        });
+        console.log(data);
+        $http.post(ApiEndpoint.url + '/notepad', data).success(function (data, status) {
+            var alertPopup = $ionicPopup.alert({
+                title: 'Sucesso',
+                template: 'E-mail enviado ao convidado. Peça para que o convidado confirme presença no e-mail que foi enviado!'
+            });
+        }).error(function (data, status) {
+            var alertPopup = $ionicPopup.alert({
+                title: 'Erro',
+                template: 'Não conseguimos enviar o e-mail :( Verifique sua conexão com a internet.'
+            })
+        });
+    }
 })
 
 .controller('CamCtrl', function ($scope, $location, $ionicPopup, GetUU) {

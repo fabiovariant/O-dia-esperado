@@ -1,12 +1,27 @@
 ﻿<ion-view view-title="Timeline">
     <ion-content>
         <h1>Timeline</h1>
+        <div ng-if="civilDate != null">
+            <p>Casamento Civil!</p>
+            <p class="text-center">{{civilDate | date:'dd/MM/yyyy'}}</p>
+            <img src="../img/Casamento-Civil.jpg" style="width: 100%; height: auto;" />
+        </div>
 
+        <div ng-if="religiousDate != null">
+            <p>Casamento Religioso!</p>
+            <p class="text-center">{{religiousDate | date:'dd/MM/yyyy'}}</p>
+            <img src="" style="width: 100%; height: auto;" />
+        </div>
+
+        <div ng-if="perfectDressDate != null">
+            <p>Vestido Perfeito!</p>
+            <p class="text-center">{{perfectDressDate | date:'dd/MM/yyyy'}}</p>
+            <img src="" style="width: 100%; height: auto;" />
+        </div>
         <div>
-            <div ng-repeat="image in images" >
-                    <img  ng-src="{{image.location}}" style="width: 100%; height: auto;" />
-                    <p class="text-center">{{image.pictureText}}</p>
-                
+            <div ng-repeat="image in images">
+                <img ng-src="{{image.location}}" style="width: 100%; height: auto;" />
+                <p class="text-center">{{image.pictureText}}</p>
             </div>
         </div>
     </ion-content>

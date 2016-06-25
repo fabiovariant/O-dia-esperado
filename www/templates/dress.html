@@ -6,15 +6,14 @@
             <ion-checkbox ng-init='checkStatus=false' ng-model="dressCheckCheck">dressCheck</ion-checkbox>
             <input id="dressCheck" name="dressCheckInput" ng-disabled="!dressCheckCheck" ng-model="dressData.dressCheck" type="text" />
 
-            <ion-checkbox ng-init='checkStatus=false' ng-model="dressData.isPerfectCheck">Está perfeito!</ion-checkbox>
-            <br/>
-
             <ion-checkbox ng-init='checkStatus=false' ng-model="takeDateCheck">takeDate</ion-checkbox>
-            <input id="takeDate" name="takeDateInput" ng-disabled="!takeDate" ngCheck-model="partyData.dressData.takeDate" type="date" />
+            <input id="takeDate" name="takeDateInput" ng-disabled="!takeDate" ng-model="dressData.takeDate" type="date" />
 
             <ion-checkbox ng-init='checkStatus=false' ng-model="devolutionDateCheck">devolutionDate</ion-checkbox>
             <input id="devolutionDate" name="devolutionDateInput" ng-disabled="!devolutionDateCheck" ng-model="dressData.devolutionDate" type="date" />
 
+            <ion-checkbox ng-init='checkStatus=false' ng-model="isPerfectCheck">Vestido perfeito!</ion-checkbox>
+            <input id="takeDate" name="takeDateInput" ng-disabled="!isPerfectCheck" ng-model="dressData.perfectDate" type="date" />
             <br />
             <label class="item">
                 <button class="button button-block button-positive" type="submit">Salvar</button>

@@ -135,6 +135,15 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
             }
         })
 
+        .state('app.user_check', {
+            url: '/user_check',
+            views: {
+                'menuContent': {
+                    templateUrl: 'templates/user_checks.html',
+                    controller: 'UserCheckListCtrl'
+                }
+            }
+        })
         .state('app.invitation', {
             url: '/invitation',
             views: {

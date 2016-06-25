@@ -22,6 +22,8 @@
             <input id="sound" name="soundInput" ng-disabled="!soundCheck" ng-model="partyData.sound" type="text" />
             <ion-checkbox ng-init='checkStatus=false' ng-model="valetCheck">valet</ion-checkbox>
             <input id="valet" name="valetInput" ng-disabled="!valetCheck" ng-model="partyData.valet" type="text" />
+            <ion-checkbox ng-init='checkStatus=false' ng-model="partyDateCheck">Party Date</ion-checkbox>
+            <input id="valet" name="valetInput" ng-disabled="!partyDateCheck" ng-model="partyData.partyDate" type="date" />
             <br />
             <label class="item">
                 <button class="button button-block button-positive" type="submit">Salvar</button>

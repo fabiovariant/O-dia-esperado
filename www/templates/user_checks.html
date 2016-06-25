@@ -1,0 +1,13 @@
+﻿<ion-view view-title="Timeline">
+    <ion-content>
+        <h1>Checklists do usuario</h1>
+        <form ng-submit="submitTable()">
+            
+            <input ng-repeat="field in table.fields track by $index" type='text' ng-model='table.fields[$index]' placeholder='Conteudo:'>
+            <div>
+                <button class="button button-full button-energized" ng-click="addFormField()">Add</button>
+                <button class="button button-full button-balanced" type='submit'>Submit</button>
+            </div>
+        </form>
+    </ion-content>
+</ion-view>
